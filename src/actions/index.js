@@ -1,5 +1,16 @@
+import { SET_RECENT_POSTS } from './types';
+
+import axios from 'axios';
+
 export function fetchRecentPosts() {
     return function(dispatch) {
-      //perform our request in here.
+      axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(response => {
+            console.log(response.data);
+            dispatch({
+                type: SET_RECENT_POSTS,
+                payload: response.data
+            })
+        }); 
     }
   }
