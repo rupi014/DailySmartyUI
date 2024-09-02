@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 class Posts extends Component {
   render() {
     return (
-        <li>
-            {this.props.title}
+        <li className='recent-post'>
+            <div className='recent-post__title'>
+                {this.props.title}
+            </div>
         </li> 
     );
   }
