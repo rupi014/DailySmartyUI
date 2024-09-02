@@ -1,4 +1,4 @@
-import { SET_RECENT_POSTS } from './types';
+import { SET_RECENT_POSTS, SET_RESULTS_POSTS } from './types';
 
 import axios from 'axios';
 
@@ -34,7 +34,7 @@ export function fetchRecentPosts() {
                 // Asegúrate de que response.data.results exista y sea un array
                 if (response.data && response.data.results) {
                     dispatch({
-                        type: SET_RECENT_POSTS,
+                        type: SET_RESULTS_POSTS,
                         payload: response.data.results
                     });
                 } else {
