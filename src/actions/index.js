@@ -6,7 +6,6 @@ export function fetchRecentPosts() {
     return function(dispatch) {
       axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
-            console.log(response.data);
             dispatch({
                 type: SET_RECENT_POSTS,
                 payload: response.data
@@ -15,7 +14,7 @@ export function fetchRecentPosts() {
     }
   }
 
-  export function fetchPostsWithQuery(query) {
+  export function fetchPostsWithQuery(query, callback) {
     return function(dispatch) {
         // Verifica que query sea un objeto y tenga la propiedad 'query'
         if (typeof query === 'object' && query.query) {
@@ -30,19 +29,19 @@ export function fetchRecentPosts() {
 
         axios.get(`https://rickandmortyapi.com/api/character/?name=${query}`)
             .then(response => {
-                console.log(response.data);
                 // Asegúrate de que response.data.results exista y sea un array
                 if (response.data && response.data.results) {
                     dispatch({
                         type: SET_RESULTS_POSTS,
                         payload: response.data.results
-                    });
+                    })
+                    callback();
                 } else {
                     console.error('Estructura de datos inesperada:', response.data);
                 }
             })
             .catch(error => {
                 console.error('Error al obtener los datos:', error);
-            });
+            }) 
     }
   }

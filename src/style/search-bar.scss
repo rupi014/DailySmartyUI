@@ -1,0 +1,40 @@
+.search-bar {
+
+    .search-bar__wrapper {
+
+        display: grid;
+        width: 100%;
+       
+        input {
+            padding-left: 35px;
+            color: $color-gray-one;
+            box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
+            border: 0px solid transparent;
+            border-radius: 5px;
+    
+            height: 118px;
+            font-size: 40px;
+    
+            transition: all 0.2s ease-in-out;
+    
+            &::placeholder {
+                color: $color-gray-two;
+                font-family: 'Font Awesome 5 Free', 'Lato', sans-serif;
+                font-weight: 600;
+            }
+    
+            &:focus {
+                outline: none;
+                box-shadow: 2px 3px 26px 1px rgba(0, 0, 0, 0.3);
+            }
+        }   
+
+        p{
+            text-align: right;
+            color: $color-gray-two;
+            font-size: 14px;
+        }
+    }
+
+    
+}
