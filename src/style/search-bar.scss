@@ -38,3 +38,28 @@
 
     
 }
+
+// Media query para dispositivos móviles
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+        .search-bar__wrapper {
+            display: grid;
+            
+            
+            input {
+                width: 100%;
+                height: 60px;
+                font-size: 20px;
+                text-align: center;
+                box-sizing: border-box; // Asegura que el padding no aumente el ancho
+            }
+
+            p {
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+    }
+
+}

@@ -28,3 +28,31 @@ $color-blue-one: #0079ff;
 @import './search-bar.scss';
 @import './recent-post.scss';
 
+// Nuevo media query para dispositivos móviles
+@media screen and (max-width: 768px) {
+    .app-wrapper {
+        display: flex;
+        justify-content: space-between;
+        min-height: 100vh;
+        padding: 0 20px;
+    }
+
+    .home {
+        width: 90vw;
+        height: auto;
+        display: grid;
+        align-content: space-evenly;
+        
+    }
+
+    .logo-main,
+    .recent-post {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}
+
